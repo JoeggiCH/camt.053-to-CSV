@@ -3,7 +3,12 @@
 <xsl:template match="/">
 <html> 
 <body>
-  <h2>My CD Collection</h2>
+  <h2>Kontoauszug</h2>  
+  <p>Konto:   <xsl:value-of select="Document/BkToCstmrStmt/Stmt/Acct/Id/IBAN"/></p>
+  <p>Währung: <xsl:value-of select="Document/BkToCstmrStmt/Stmt/Acct/Ccy"/></p>
+  <p>Von:     <xsl:value-of select="Document/BkToCstmrStmt/Stmt/FrToDt/FrDtTm"/></p>
+  <p>Bis:     <xsl:value-of select="Document/BkToCstmrStmt/Stmt/FrToDt/ToDtTm"/></p>
+  <p>Erstellt:<xsl:value-of select="Document/BkToCstmrStmt/Stmt/CreDtTm"/></p>
   <table border="1">
     <tr bgcolor="#9acd32">
       <th style="text-align:left">Booking Date</th>
